@@ -3,31 +3,47 @@
 || @url            http://wiring.org.co/
 ||
 || @description
-|| | An Example for the Example Wiring Library
 || |
-|| | This is an example sketch using the ExampleLibrary Wiring Library
+|| | This is an example sketch using the MillisTimer Wiring Library.
+|| |
 || #
 ||
 || @license Please see the accompanying LICENSE file for this project.
 ||
 */
 
-#include <ExampleLibrary.h>
+#include "MillisTimer.h"
 
-ExampleLibrary widget = ExampleLibrary(FORWARD);
+
+MillisTimer timer1 = MillisTimer(1000);
+
+void myTimerFunction(MillisTimer &mt)
+{
+  Serial.print(Constant("Repeat: "));
+  Serial.println(mt.getRemainingRepeats());
+}
 
 
 void setup()
 {
   Serial.begin(9600);
 
-  Serial.println(Constant("ExampleLibrary Demonstration"));
+  timer1.setInterval(1000);
+  timer1.expiredHandler(myTimerFunction);
+  timer1.setRepeats(5);
+  timer1.start();
 }
 
 
 void loop()
 {
-  widget.doThatThing();
+  timer1.run();
 
-  delay(500);
+  if (!timer1.isRunning())
+  {
+    Serial.println(Constant("Timer finished!"));
+    for (;;);
+  }
+  
+  delay(10);
 }
