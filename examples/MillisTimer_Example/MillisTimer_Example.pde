@@ -17,7 +17,7 @@
 // Create a timer that fires every 1000 milliseconds.
 MillisTimer timer1 = MillisTimer(1000);
 
-// This is the function that the timer expires.
+// This is the function that is called when the timer expires.
 void myTimerFunction(MillisTimer &mt)
 {
   Serial.print(Constant("Repeat: "));
