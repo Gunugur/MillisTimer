@@ -8,15 +8,16 @@
 || |
 || #
 ||
-|| @license Please see the accompanying LICENSE file for this project.
+|| @license Please see the accompanying LICENSE.txt file for this project.
 ||
 */
 
 #include "MillisTimer.h"
 
-
+// Create a timer that fires every 1000 milliseconds.
 MillisTimer timer1 = MillisTimer(1000);
 
+// This is the function that the timer expires.
 void myTimerFunction(MillisTimer &mt)
 {
   Serial.print(Constant("Repeat: "));
@@ -47,3 +48,4 @@ void loop()
   
   delay(10);
 }
+

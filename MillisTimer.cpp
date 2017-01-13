@@ -9,7 +9,7 @@
 || | Wiring Cross-platform Library
 || #
 ||
-|| @license Please see the accompanying LICENSE file for this project.
+|| @license Please see the accompanying LICENSE.txt file for this project.
 ||
 */
 

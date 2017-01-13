@@ -9,7 +9,7 @@
 || | Wiring Cross-platform Library
 || #
 ||
-|| @license Please see the accompanying LICENSE file for this project.
+|| @license Please see the accompanying LICENSE.txt file for this project.
 ||
 */
 
@@ -18,7 +18,7 @@
 
 #if ARDUINO >= 100
  #include <Arduino.h>
- #define Constant(x) x
+ #define Constant(x) F(x)
 #elif defined(WIRING)
  #include <Wiring.h>
 #else
